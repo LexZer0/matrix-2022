@@ -18,6 +18,7 @@ void removeDig(int b[], int n);
 
 int main()
 {
+	setlocale(LC_ALL, "Russian");
 	int n;
 	int a[MAX_N];
 	int b[MAX_N];
@@ -42,7 +43,7 @@ void writeArray(int a[], int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		a[i] = rand() % 10 - 5;
+		a[i] = rand() % 20 - 10;
 	}
 }
 
@@ -69,6 +70,7 @@ void writeReserve(int b[], int n)
 	{
 		cout << b[i] << " ";
 	}
+	cout << endl;
 }
 
 void MinMaxArray(int a[], int n)
@@ -132,10 +134,10 @@ void difference(int b[], int n)
 		{
 			p++;
 			cout << "a[i] = " << b[i];
-			cout << "\t" << "k = " << k << endl;
+			cout << "\t" << "Количество повторений = " << k << endl;
 		}
 	}
-	cout << "p = " << p << "\n\n";
+	cout << "Количество различных элементов в массиве = " << p << "\n\n";
 }
 
 void sumNechet(int a[], int n)
@@ -143,13 +145,13 @@ void sumNechet(int a[], int n)
 	int nch, sumN = 0;
 	for (int i = 0; i < n; i++)
 	{
-		nch = a[i] % 2;
+		nch = i % 2;
 		if (1 == nch)
 		{
 			sumN += a[i];
 		}
 	}
-	cout << "Sum of nechetnih=" << sumN << "\n\n";
+	cout << "Сумма элементов массива с нечетными номерами = " << sumN << "\n\n";
 }
 
 void sumMinus(int a[], int n)
@@ -175,7 +177,7 @@ void sumMinus(int a[], int n)
 	{
 		sumPool += a[first];
 	}
-	cout << "SumPool=" << sumPool << "\n\n";
+	cout << "Сумма элементов между первым и последним отрицательными элементами = " << sumPool << "\n\n";
 }
 
 void removeDig (int b[], int n)
@@ -197,4 +199,5 @@ void removeDig (int b[], int n)
 			}
 		}
 	}
+	cout << "Массив без элементов, модуль которых не превышает 1:" << endl;
 }
